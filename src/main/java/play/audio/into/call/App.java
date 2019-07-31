@@ -15,6 +15,7 @@ public class App {
     Dotenv dotenv = Dotenv.load();
 
     port(Integer.parseInt(dotenv.get("PORT")));
+    final String privateKeyPath = dotenv.get("NEXMO_PRIVATE_KEY_PATH");
 
     final String privateKeyPath = System.getProperty("user.dir") + "/" + dotenv.get("NEXMO_PRIVATE_KEY_PATH");
 
