@@ -1,11 +1,20 @@
-# Stream Audio Into a Call with Java
+# ⚠️ This repository is no longer maintained.
+
+<img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
+
+## Support Notice
+This is an archived repository. If you have any questions, feel free to reach out to us at devrel@vonage.com or through our Community Slack at https://developer.vonage.com/community/slack.
+
+<hr />
+
+## Stream Audio Into a Call with Java
 
 This is the code for the Nexmo Developer blog post of the same name. It shows you how to create a conference and then stream audio into it.
 
 Configure and run the application by executing the following steps:
 
 
-## Install the Nexmo CLI
+### Install the Nexmo CLI
 
 This step requires `npm` (the Node Package Manager), which is part of [Node.js](https://nodejs.org/en/).
 
@@ -16,7 +25,7 @@ npm install -g nexmo-cli
 nexmo setup NEXMO_API_KEY NEXMO_API_SECRET
 ```
 
-## Buy a Nexmo Virtual number
+### Buy a Nexmo Virtual number
 
 Search for available numbers with `voice` capability, using your [two-character country code](https://www.iban.com/country-codes). For example, using `GB` for the United Kingdom:
 
@@ -30,7 +39,7 @@ Buy one of the numbers, for example `442079460000`:
 nexmo number:buy 442079460000
 ```
 
-## Run ngrok
+### Run ngrok
 
 Your webhooks must be publicly accessible over the Internet. You can use `ngrok` for this (see our [blog post on ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr)).
 
@@ -40,7 +49,7 @@ Run `ngrok` on port 3000 using the following command and make a note of the URLs
 ngrok http 3000
 ```
 
-## Create a Voice API application
+### Create a Voice API application
 
 Run the following command in the project's root directory, replacing the `/webhooks/answer` URL domain name with the one provided by `ngrok`. We don't use `/webhooks/events` in this example, so provide any URL for that. 
 
@@ -50,7 +59,7 @@ nexmo app:create "Play Call Audio" https://41acbcd0.ngrok.io/webhooks/answer htt
 
 Make a note of the application ID. This step also downloads your Nexmo credentials in a file called `private.key`.
 
-## Link your Nexmo number to your Voice Application
+### Link your Nexmo number to your Voice Application
 
 Replace `NEXMO_APPLICATION_ID` with the one returned by the preceding command.
 
@@ -58,11 +67,11 @@ Replace `NEXMO_APPLICATION_ID` with the one returned by the preceding command.
 nexmo link:app NEXMO_NUMBER NEXMO_APPLICATION_ID
 ```
 
-## Configure the application
+### Configure the application
 
 Copy `example.env` to `.env`. Replace the `NEXMO_APPLICATION_ID` with your own application ID. If you have followed the steps above you can leave the other settings unchanged.
 
-## Run the application
+### Run the application
 
 1. Execute `gradle run`.
 
