@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     // Spark framework
-    implementation 'com.sparkjava:spark-core:2.8.0'
+    implementation 'com.sparkjava:spark-core:2.9.1'
  
     // Nexmo client library
     implementation 'com.nexmo:client:4.4.0'
